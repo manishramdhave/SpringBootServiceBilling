@@ -1,0 +1,22 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata: 
+  name: deployment-file
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      service: order
+
+  template:
+    metadata:
+      labels:
+        service: order
+
+    spec:
+      containers:
+        - name: v1
+          image: manishramdhave/order:1.0
+          ports:
+            - containerPort: 8080
