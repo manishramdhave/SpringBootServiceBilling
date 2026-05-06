@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: velservice
+
+
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30008
+
+
+  selector:
+    service: billing
+
+  type: NodePort
