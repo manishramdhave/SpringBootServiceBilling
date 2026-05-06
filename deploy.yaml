@@ -7,16 +7,16 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      service: order
+      service: billing
 
   template:
     metadata:
       labels:
-        service: order
+        service: billing
 
     spec:
       containers:
         - name: v1
-          image: manishramdhave/order:1.0
+          image: manishramdhave/billing:1.0
           ports:
             - containerPort: 8080
